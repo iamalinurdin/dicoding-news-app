@@ -1,0 +1,22 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+class PlatformWidget extends StatelessWidget {
+  final WidgetBuilder androidBuilder;
+  final WidgetBuilder iosBuilder;
+
+  const PlatformWidget({super.key, required this.androidBuilder, required this.iosBuilder});
+  
+  @override
+  Widget build(BuildContext context) {
+    switch (defaultTargetPlatform) {
+      case TargetPlatform.android:
+        return androidBuilder(context);
+      case TargetPlatform.iOS:
+        return androidBuilder(context);
+      default:
+        return androidBuilder(context);
+    }
+  }
+}
